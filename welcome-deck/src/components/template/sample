@@ -1,0 +1,169 @@
+<Container>
+      <h1 className="text-center">HR View</h1>
+
+      <Col md={3}>
+        <h3>Employee List</h3>
+        {employees.map((employee) => (
+          <Card key={employee.id} className="mb-2">
+            <Card.Body>
+              <Card.Title>ID: {employee.id}</Card.Title>
+              <Card.Text>Name: {employee.name}</Card.Text>
+            </Card.Body>
+          </Card>
+        ))}
+      </Col>
+
+      <Form>
+        <Row className="d-flex">
+          <Col md={6}>
+            <Form.Group className="mb-3">
+              <Form.Label>Employee ID:</Form.Label>
+              <Form.Control
+                type="text"
+                value={employeeId}
+                onChange={(e) => setEmployeeId(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Name:</Form.Label>
+              <Form.Control
+                type="text"
+                value={employeeDetails?.name || ""}
+                readOnly
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Email:</Form.Label>
+              <Form.Control
+                type="email"
+                value={employeeDetails?.email || ""}
+                readOnly
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Contact Mobile:</Form.Label>
+              <Form.Control
+                type="text"
+                value={employeeDetails?.contactMobile || ""}
+                readOnly
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Contact Email (Optional):</Form.Label>
+              <Form.Control
+                type="email"
+                value={employeeDetails?.contactEmail || ""}
+                readOnly
+              />
+            </Form.Group>
+          </Col>
+
+          <Col md={6}>
+            <Form.Group className="mb-3">
+              <Form.Label>Hometown:</Form.Label>
+              <Form.Control
+                type="text"
+                value={employeeDetails?.hometown || ""}
+                readOnly
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Education Qualification:</Form.Label>
+              <Form.Control
+                type="text"
+                value={employeeDetails?.educationQualification || ""}
+                readOnly
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Experience (Years):</Form.Label>
+              <Form.Control
+                type="number"
+                value={employeeDetails?.experience || ""}
+                readOnly
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Hobbies:</Form.Label>
+              <Form.Control
+                type="text"
+                value={employeeDetails?.hobbies || ""}
+                readOnly
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={6}>
+            <Form.Group className="mb-3">
+              <Form.Label>Core Skill:</Form.Label>
+              <Form.Control
+                type="text"
+                value={employeeDetails?.coreSkill || ""}
+                readOnly
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Favourite Quote:</Form.Label>
+              <Form.Control
+                as="textarea"
+                value={employeeDetails?.favouriteQuote || ""}
+                readOnly
+              />
+            </Form.Group>
+          </Col>
+
+          <Col md={6}>
+            <Form.Group className="mb-3">
+              <Form.Label>Another Profession (Optional):</Form.Label>
+              <Form.Control
+                type="text"
+                value={employeeDetails?.anotherProfession || ""}
+                readOnly
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Profile Picture Path:</Form.Label>
+              <Form.Control
+                type="text"
+                value={employeeDetails?.profilePicturePath || ""}
+                readOnly
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>IBU:</Form.Label>
+              <Form.Control
+                type="text"
+                value={employeeDetails?.assignedIbuId || ""}
+                readOnly
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+        <div className="d-flex gap-2">
+          <Button variant="primary" onClick={handleFindClick}>
+            Find
+          </Button>
+          <Button variant="success" onClick={handleViewCardClassicClick}>
+            View Card - Classic Mode
+          </Button>
+          <Button variant="danger" onClick={handleViewCardRetroClick}>
+            View Card - Retro Mode
+          </Button>
+          <Button variant="info" onClick={handleViewCardModernClick}>
+            View Card - Modern Mode
+          </Button>
+        </div>
+      </Form>
+    </Container>

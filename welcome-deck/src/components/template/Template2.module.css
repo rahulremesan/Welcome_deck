@@ -1,0 +1,123 @@
+.container {
+  background-color: #dbdbdb; /* Change to desired background color */
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  
+}
+
+
+.content {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid #ffffff; /* Adjust border thickness and color as desired */
+  border-radius: 5px;
+}
+.content h1 {
+  font-size: 75px;
+  text-align: center;
+  margin-top: 30px; /* Adjust margin for spacing */
+}
+
+.leftColumn {
+  flex: 1;
+  padding: 30px;
+}
+
+.rightColumn {
+  flex: 1;
+  padding: 30px;
+}
+
+/* Profile image */
+.profileImage {
+  margin-bottom: 30px;
+  /* Adjust styles for image display */
+}
+
+/* Information column */
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid #ffffff; /* Adjust border thickness and color as desired */
+  border-radius: 5px;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.infoLabel {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.infoValue {
+  color: #333;
+}
+
+/* Hero section */
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+
+}
+
+.heroDetails {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #666;
+  
+}
+
+/* Quote section */
+.quoteSection {
+  margin-bottom: 30px;
+  border: 1px solid #ffffff; /* Adjust border thickness and color as desired */
+  border-radius: 5px;
+}
+
+.quoteText {
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* Contact section */
+.contactSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  border: 1px solid #ffffff; /* Adjust border thickness and color as desired */
+  border-radius: 5px;
+}
+
+.contactLabel {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Alternate profession section */
+.alternateProfessionSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

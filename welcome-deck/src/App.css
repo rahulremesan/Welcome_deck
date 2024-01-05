@@ -1,0 +1,36 @@
+.download-button {
+    background-color: rgb(165, 174, 184);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .download-button:hover {
+    background-color: rgb(179, 57, 0);
+  }
+  
+  /* Adjust the icon size and color as needed */
+  .download-icon {
+    font-size: 24px;
+    color: white;
+  }
+
+
+.force-overflow
+{
+	max-height: 600px;
+}
+
+.scrollbar
+{
+	background: #F5F5F5;
+	overflow-y: scroll;
+}
+#style-2::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
