@@ -90,49 +90,49 @@ const apiService = {
     }
   },
 
-  addProfilePicture: async (imageFile) => {
-    try {
-      const response = await fetch(`${BASE_URL}/image/upload`, {
-        method: "POST",
-        body: imageFile,
-      });
-  
-      if (!response.ok) {
-        throw new Error("Failed to add profile picture");
+    addProfilePicture: async (imageFile) => {
+      try {
+        const response = await fetch(`${BASE_URL}/image/upload`, {
+          method: "POST",
+          body: imageFile,
+        });
+    
+        if (!response.ok) {
+          throw new Error("Failed to add profile picture");
+        }
+    
+        // Check if the response is text or something other than JSON
+        const contentType = response.headers.get("content-type");
+        if (contentType && contentType.includes("text")) {
+          return await response.text(); // Handle text response
+        } else {
+          return await response.json(); // Handle JSON response
+        }
+      } catch (error) {
+        throw new Error(error.message);
       }
-  
-      // Check if the response is text or something other than JSON
-      const contentType = response.headers.get("content-type");
-      if (contentType && contentType.includes("text")) {
-        return await response.text(); // Handle text response
-      } else {
-        return await response.json(); // Handle JSON response
-      }
-    } catch (error) {
-      throw new Error(error.message);
-    }
-  },
-  
+    },
+    
 
-  getImageById: async (id) => {
-    try {
-      const response = await fetch(`${BASE_URL}/image/${id}`);
-      if (!response.ok) {
-        throw new Error("Failed to fetch");
+    getImageById: async (id) => {
+      try {
+        const response = await fetch(`${BASE_URL}/image/${id}`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch");
+        }
+        const blob = await response.blob();
+        const reader = new FileReader();
+        reader.readAsDataURL(blob);
+        return new Promise((resolve) => {
+          reader.onloadend = () => {
+            resolve(reader.result);
+          };
+        });
+      } catch (error) {
+        console.error("Error fetching image:", error);
+        return null;
       }
-      const blob = await response.blob();
-      const reader = new FileReader();
-      reader.readAsDataURL(blob);
-      return new Promise((resolve) => {
-        reader.onloadend = () => {
-          resolve(reader.result);
-        };
-      });
-    } catch (error) {
-      console.error("Error fetching image:", error);
-      return null;
-    }
-  },
+    },
   
 };
 

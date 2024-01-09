@@ -57,7 +57,7 @@ const Template1 = () => {
                   />                   
                    <p>{employeeDetails.name}</p>
                   </h2>
-                  <p className="text-center">{employeeDetails.role}</p>
+                  <p className="text-center">{employeeDetails.role}</p> 
                 </div>
                 <div
                   className={`col-md-1 align-items-start p-3 ${styles.filler1}`}
